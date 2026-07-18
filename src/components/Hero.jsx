@@ -117,7 +117,7 @@ export default function Hero() {
             "
           >
             <p className="text-sm font-medium text-neutral-700">
-              Junior Power Platform Developer
+              Software Developer
             </p>
           </motion.div>
 

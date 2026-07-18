@@ -259,7 +259,7 @@ export default function About() {
                 </h3>
 
                 <p className="mt-1 text-xs text-neutral-500">
-                  Junior Power Platform Developer
+                  Software Developer
                 </p>
 
                 <p className="text-xs text-neutral-500">
