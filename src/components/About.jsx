@@ -335,7 +335,7 @@ export default function About() {
 
               text-neutral-600
               ">
-                I enjoy developing Power Platform business solutions and WordPress websites, but I'm especially drawn to the creative side of technology. I love designing user interfaces, learning about user experience, and continuously exploring new tools and technologies that help me create thoughtful digital products.
+                I enjoy developing Power Platform business solutions and WordPress websites, but I'm especially drawn to the creative side of technology. I love designing user interfaces, and continuously exploring new tools and technologies that help me create thoughtful digital products.
               </p>
 
               {/* Divider */}
