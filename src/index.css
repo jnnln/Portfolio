@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@font-face {
+  font-family: "Cavalhatriz";
+  src: url("./assets/fonts/Cavalhatriz.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fcfcfc;
+  color: #171717;
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-family: "Cavalhatriz";
+}
+
+@keyframes floatingNavbar {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating-navbar {
+  animation: floatingNavbar 5s ease-in-out infinite;
+}
