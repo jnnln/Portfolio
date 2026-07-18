@@ -77,7 +77,7 @@ const stats = [
   },
   {
     number: "3",
-    title: "Production Systems",
+    title: "Production Apps",
     icon: "♡",
   },
 ];
@@ -89,7 +89,20 @@ export default function About() {
     <>
       <section
         id="about-me"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+        className="
+          relative
+          flex
+          min-h-screen
+          items-center
+          justify-center
+          overflow-hidden
+
+          px-5
+          sm:px-6
+          lg:px-8
+
+          py-24
+        "
       >
         {/* Background */}
 
@@ -99,7 +112,7 @@ export default function About() {
 
         <div className="absolute bottom-0 right-0 -z-10 h-[25rem] w-[25rem] rounded-full bg-pink-200/20 blur-[180px]" />
 
-        <div className="mx-auto w-full max-w-6xl">
+        <div className="mx-auto w-full max-w-7xl">
 
           {/* Heading */}
 
@@ -114,7 +127,13 @@ export default function About() {
 
               <h2
                 style={{ fontFamily: "Cavalhatriz" }}
-                className="text-4xl text-neutral-900"
+                className="
+                text-3xl
+                sm:text-4xl
+                lg:text-5xl
+
+                text-neutral-900
+                "
               >
                 About Me
               </h2>
@@ -142,7 +161,21 @@ export default function About() {
 
           {/* Main Section */}
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-[240px_1fr]">
+          <div
+            className="
+              mt-12
+
+              grid
+
+              gap-8
+              lg:gap-10
+
+              grid-cols-1
+              lg:grid-cols-[260px_1fr]
+
+              items-start
+            "
+          >
 
             {/* PROFILE CARD */}
 
@@ -163,7 +196,9 @@ export default function About() {
               border-neutral-200/80
 
               bg-white/60
-              p-5
+              p-4
+              sm:p-5
+              lg:p-6
 
               shadow-xl
               shadow-black/5
@@ -177,26 +212,45 @@ export default function About() {
               hover:shadow-2xl
               "
             >
-              <div className="overflow-hidden rounded-[24px]">
+              <div
+              className="
+                overflow-hidden
 
-                <img
-                  src={Profile}
-                  alt="Janina"
-                  className="
-                  h-[290px]
+                mx-auto
+
+                h-52
+                w-52
+
+                sm:h-60
+                sm:w-60
+
+                lg:mx-0
+                lg:h-[290px]
+                lg:w-full
+
+                lg:rounded-[28px]
+                rounded-full
+
+                lg:rounded-[28px]
+              "
+            >
+              <img
+                src={Profile}
+                alt="Janina"
+                className="
+                  h-full
                   w-full
 
                   object-cover
-                  object-top
+                  object-[50%_15%]
 
                   transition-all
-                  duration-500
+                  duration-700
 
-                  group-hover:scale-105
-                  "
-                />
-
-              </div>
+                  group-hover:scale-[1.03]
+                "
+              />
+              </div>          
 
               <div className="mt-4 text-center">
 
@@ -234,7 +288,9 @@ export default function About() {
               border-neutral-200/80
 
               bg-white/60
-              p-8
+              p-6
+              sm:p-7
+              lg:p-8
 
               shadow-xl
               shadow-black/5
@@ -269,7 +325,16 @@ export default function About() {
 
               </div>
 
-              <p className="mt-5 text-sm leading-6 text-neutral-600">
+              <p className="
+              mt-5
+
+              text-[15px]
+              leading-7
+
+              sm:text-sm
+
+              text-neutral-600
+              ">
                 I enjoy developing Power Platform business solutions and WordPress websites, but I'm especially drawn to the creative side of technology. I love designing user interfaces, learning about user experience, and continuously exploring new tools and technologies that help me create thoughtful digital products.
               </p>
 
@@ -323,7 +388,7 @@ export default function About() {
 
                 </div>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
 
                     {technologies.map((tech, index) => (
                     <motion.div
@@ -354,8 +419,10 @@ export default function About() {
                         via-white/70
                         to-rose-100/80
 
-                        px-4
+                        px-3
                         py-2
+
+                        sm:px-4
 
                         text-xs
                         font-medium
@@ -389,7 +456,7 @@ export default function About() {
                   currently working on:
                 </p>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
 
                   {currently.map((item) => (
                     <div
@@ -402,8 +469,10 @@ export default function About() {
 
                       bg-white/70
 
-                      px-4
+                      px-3
                       py-2
+
+                      sm:px-4
 
                       text-xs
                       text-neutral-700
@@ -442,7 +511,7 @@ export default function About() {
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent" />
 
-          <div className="mt-8 grid grid-cols-3 gap-8">
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
 
             {stats.map((stat, index) => (
               <motion.div
@@ -457,7 +526,7 @@ export default function About() {
                   {stat.icon}
                 </p>
 
-                <h3 className="mt-2 text-4xl font-semibold text-neutral-900">
+                <h3 className="mt-2 text-3xl sm:text-4xl font-semibold text-neutral-900">
                   {stat.number}
                 </h3>
 
@@ -537,6 +606,8 @@ export default function About() {
             className="
               w-full
               max-w-3xl
+              max-h-[90vh]
+              overflow-hidden
 
               rounded-[32px]
 
@@ -545,7 +616,9 @@ export default function About() {
 
               bg-white/75
 
-              p-8
+              p-5
+              sm:p-6
+              lg:p-8
 
               shadow-2xl
               shadow-black/10
@@ -606,7 +679,7 @@ export default function About() {
 
             {/* Categories */}
 
-            <div className="space-y-7 max-h-[60vh] overflow-y-auto pr-2">
+            <div className="space-y-7 max-h-[70vh] sm:max-h-[60vh] overflow-y-auto pr-2">
 
               {Object.entries(allSkills).map(([category, skills]) => (
 

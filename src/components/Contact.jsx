@@ -8,53 +8,68 @@ export default function Contact() {
       className="
         relative
         flex
-        min-h-screen
         items-center
         overflow-hidden
-        px-6
-        py-32
+
+        min-h-screen
+
+        px-5
+        sm:px-6
+        lg:px-8
+
+        py-20
+        sm:py-24
+        lg:py-32
       "
     >
       {/* Background Glow */}
 
-      <div className="absolute -left-32 top-0 h-[30rem] w-[30rem] rounded-full bg-pink-200/20 blur-[180px]" />
+      <div className="absolute -left-40 top-0 h-[32rem] w-[32rem] rounded-full bg-pink-200/20 blur-[220px]" />
 
-      <div className="absolute right-0 bottom-0 h-[26rem] w-[26rem] rounded-full bg-rose-200/20 blur-[180px]" />
+      <div className="absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-rose-200/20 blur-[220px]" />
 
-      <div className="mx-auto w-full max-w-5xl">
-        {/* Small Heading */}
-
-        <p className="mb-12 text-center text-sm text-neutral-400">
+      <div className="mx-auto w-full max-w-6xl">
+        <p className="mb-14 text-center text-sm text-neutral-400">
           Thanks for scrolling this far ✦
         </p>
-
-        {/* Main Grid */}
 
         <div
           className="
             grid
             items-center
-            gap-12
 
-            lg:grid-cols-[1.3fr_1fr]
+            gap-16
+
+            lg:grid-cols-[1.35fr_1fr]
           "
         >
-          {/* LEFT SIDE */}
+          {/* LEFT */}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center"
+            className="
+              flex
+              flex-col
+
+              items-center
+              text-center
+
+              lg:items-start
+              lg:text-left
+            "
           >
             <h2
               style={{ fontFamily: "Cavalhatriz" }}
               className="
                 leading-[0.95]
-                text-[5rem]
-                text-[#360c13]
 
-                md:text-[7rem]
+                text-[3.6rem]
+                sm:text-[5rem]
+                lg:text-[6.8rem]
+
+                text-[#360c13]
               "
             >
               Let's
@@ -67,13 +82,18 @@ export default function Contact() {
             </h2>
           </motion.div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT */}
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-12"
+            className="
+              space-y-10
+
+              text-center
+              lg:text-left
+            "
           >
             {/* EMAIL */}
 
@@ -86,11 +106,18 @@ export default function Contact() {
                 href="mailto:janinalaine.platero@gmail.com"
                 className="
                   inline-block
+
+                  break-all
+
                   border-b
                   border-[#360c13]
+
                   pb-1
 
-                  text-xl
+                  text-base
+                  sm:text-lg
+                  lg:text-xl
+
                   font-medium
 
                   text-[#360c13]
@@ -98,12 +125,17 @@ export default function Contact() {
                   transition-all
                   duration-300
 
-                  hover:border-pink-500
                   hover:text-pink-500
+                  hover:border-pink-500
                 "
               >
                 janinalaine.platero@gmail.com
               </a>
+
+              <p className="mx-auto mt-5 max-w-sm text-sm leading-7 text-neutral-500 lg:mx-0">
+                Based in the Philippines and available for remote opportunities
+                worldwide.
+              </p>
             </div>
 
             {/* SOCIALS */}
@@ -113,7 +145,17 @@ export default function Contact() {
                 Socials
               </p>
 
-              <div className="flex gap-8">
+              <div
+                className="
+                  flex
+                  flex-wrap
+                  justify-center
+
+                  gap-6
+
+                  lg:justify-start
+                "
+              >
                 <a
                   href="https://github.com/jnnln"
                   target="_blank"
@@ -163,7 +205,7 @@ export default function Contact() {
             {/* AVAILABILITY */}
 
             <div>
-              <p className="mb-4 text-sm font-medium text-neutral-400">
+              <p className="mb-3 text-sm font-medium text-neutral-400">
                 Currently Open For
               </p>
 
@@ -172,10 +214,10 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* RESUME */}
+            {/* BUTTON */}
 
             <a
-              href="/resume.pdf"
+              href="/resume_janinalaine_platero.pdf"
               className="
                 inline-flex
                 items-center
@@ -196,6 +238,7 @@ export default function Contact() {
 
                 shadow-lg
                 shadow-neutral-200/50
+
                 backdrop-blur-xl
 
                 transition-all
@@ -205,11 +248,20 @@ export default function Contact() {
                 hover:border-[#360c13]
                 hover:bg-white
                 hover:shadow-xl
+                hover:shadow-[#360c13]/10
+
+                active:scale-95
               "
             >
               Download Resume →
             </a>
           </motion.div>
+        </div>
+
+        {/* Footer */}
+
+        <div className="mt-24 text-center text-sm text-neutral-400">
+          Designed & developed by Janina ♡
         </div>
       </div>
     </section>

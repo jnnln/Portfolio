@@ -122,7 +122,7 @@ export default function Hero() {
           </motion.div>
 
           <a
-  href="/resume.pdf"
+  href="/resume_janinalaine_platero.pdf"
   className="
     inline-flex
     items-center

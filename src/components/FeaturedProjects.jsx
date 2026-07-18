@@ -185,13 +185,18 @@ console.log(projects.length);
                   src={selectedProject.images[currentImage]}
                   alt={selectedProject.title}
                   className="
-                    h-[520px]
-                    w-full
+                  w-full
 
-                    rounded-3xl
+                  h-56
+                  sm:h-72
+                  md:h-80
+                  lg:h-[420px]
+                  xl:h-[520px]
 
-                    object-cover
-                  "
+                  rounded-3xl
+
+                  object-cover
+                "
                 />
 
                 {/* Previous */}
