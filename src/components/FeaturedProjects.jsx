@@ -68,7 +68,10 @@ console.log(projects.length);
 
             <h2
               style={{ fontFamily: "Cavalhatriz" }}
-              className="text-4xl text-neutral-900"
+              className="text-3xl
+                sm:text-4xl
+                lg:text-5xl
+                text-neutral-900"
             >
               My Projects
             </h2>
@@ -186,12 +189,8 @@ console.log(projects.length);
                   alt={selectedProject.title}
                   className="
                   w-full
-
-                  h-56
-                  sm:h-72
-                  md:h-80
-                  lg:h-[420px]
-                  xl:h-[520px]
+                  h-auto
+            
 
                   rounded-3xl
 
@@ -202,32 +201,32 @@ console.log(projects.length);
                 {/* Previous */}
 
                 {selectedProject.images.length > 1 && (
-
                   <button
                     onClick={previousImage}
                     className="
                       absolute
                       left-5
                       top-1/2
-
                       -translate-y-1/2
 
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+
                       rounded-full
-
                       bg-white/80
-
-                      p-3
-
                       shadow-lg
-
                       backdrop-blur
+
+                      transition
+                      hover:scale-105
                     "
                   >
                     ←
                   </button>
-
                 )}
-
                 {/* Next */}
 
                 {selectedProject.images.length > 1 && (
@@ -238,17 +237,17 @@ console.log(projects.length);
                       absolute
                       right-5
                       top-1/2
-
                       -translate-y-1/2
 
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+
                       rounded-full
-
                       bg-white/80
-
-                      p-3
-
                       shadow-lg
-
                       backdrop-blur
                     "
                   >
@@ -288,7 +287,8 @@ console.log(projects.length);
 
                 </div>
 
-              )}              {/* Content */}
+              )}              
+              {/* Content */}
 
               <div className="mt-8">
 

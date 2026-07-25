@@ -25,8 +25,50 @@ import LaanRMS from "../assets/projects/laanrms/cover.png";
 import Elaan from "../assets/projects/elaan/cover.png";
 
 export const projects = [
+
   {
-  id: 1,
+    id: 1,
+
+    title: "AmeriYoung",
+
+    subtitle: "Website & Self-Service Kiosk",
+
+    year: "2026",
+
+    image: AmeriYoung,
+
+    images: [
+      AmeriYoung,
+    ],
+
+    technologies: [
+      "WordPress",
+      "Elementor",
+      "WooCommerce",
+      "PWA",
+    ],
+
+    overview:
+      "An in-progress website and self-service kiosk designed to provide customers with a seamless shopping experience for skincare products in both web and kiosk environments.",
+
+    contributions: [
+      "Enhanced the website and kiosk UI/UX",
+      "Improved user flows and overall usability",
+      "Coordinated project tasks and feature planning",
+      "Conducted testing and quality assurance",
+      "Collaborated with the development team on new features",
+    ],
+
+    features: [
+      "WordPress Website",
+      "Self-Service Kiosk",
+      "Product Catalog",
+      "QR Cart Handoff",
+      "Responsive Design",
+    ],
+  },
+  {
+  id: 2,
 
   title: "Medical Observership",
 
@@ -74,7 +116,7 @@ export const projects = [
   ],
 },
   {
-    id: 2,
+    id: 3,
 
     title: "Medical Observership",
 
@@ -114,7 +156,7 @@ export const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
 
     title: "Rise High Mentorship",
 
@@ -157,47 +199,7 @@ export const projects = [
       "Mentee Profiles",
       "Statistics Overview",
     ],
-  },  {
-    id: 4,
-
-    title: "AmeriYoung",
-
-    subtitle: "Website & Self-Service Kiosk",
-
-    year: "2026",
-
-    image: AmeriYoung,
-
-    images: [
-      AmeriYoung,
-    ],
-
-    technologies: [
-      "WordPress",
-      "Elementor",
-      "WooCommerce",
-      "PWA",
-    ],
-
-    overview:
-      "An in-progress website and self-service kiosk designed to provide customers with a seamless shopping experience for skincare products in both web and kiosk environments.",
-
-    contributions: [
-      "Enhanced the website and kiosk UI/UX",
-      "Improved user flows and overall usability",
-      "Coordinated project tasks and feature planning",
-      "Conducted testing and quality assurance",
-      "Collaborated with the development team on new features",
-    ],
-
-    features: [
-      "WordPress Website",
-      "Self-Service Kiosk",
-      "Product Catalog",
-      "QR Cart Handoff",
-      "Responsive Design",
-    ],
-  },
+  },  
 
   {
     id: 5,

@@ -13,6 +13,25 @@ const technologies = [
 ];
 
 const allSkills = {
+  "Programming Languages": [
+    "Python",
+    "JavaScript",
+    "C",
+  ],
+
+  "Web Development": [
+    "React",
+    "SvelteKit",
+    "WordPress",
+    "Elementor",
+    "WooCommerce",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Flask",
+    "REST APIs",
+  ],
+
   "Power Platform": [
     "Power Apps",
     "Power Automate",
@@ -22,38 +41,20 @@ const allSkills = {
     "Microsoft Bookings",
   ],
 
-  "Web Development": [
-    "React",
-    "SvelteKit",
-    "WordPress",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Tailwind CSS",
-    "Flask",
-    "REST APIs",
-  ],
-
-  "Programming Languages": [
-    "Python",
-    "C",
-    "JavaScript",
-  ],
-
   Databases: [
     "PostgreSQL",
     "MySQL",
   ],
 
-  "UI / UX & Design": [
-    "Figma",
-  ],
-
-  Tools: [
+  "Tools": [
     "Git",
     "GitHub",
-    "VS Code",
+    "Visual Studio Code",
     "Microsoft 365",
+  ],
+
+  "UI / UX": [
+    "Figma",
   ],
 };
 
@@ -498,65 +499,64 @@ export default function About() {
 
           </div>
 
-                  {/* STATS */}
+          {/* STATS */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-14"
-        >
-          {/* Divider */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-14"
+          >
+            {/* Divider */}
 
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent" />
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent" />
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.15 }}
+                  whileHover={{ y: -3 }}
+                  className="group text-center"
+                >
+                  <p className="text-base sm:text-lg text-neutral-400 transition-all duration-300 group-hover:text-neutral-800">
+                    {stat.icon}
+                  </p>
 
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
-                whileHover={{ y: -3 }}
-                className="group text-center"
-              >
-                <p className="text-lg text-neutral-400 transition-all duration-300 group-hover:text-neutral-800">
-                  {stat.icon}
-                </p>
+                  <h3 className="mt-2 text-2xl sm:text-4xl font-semibold text-neutral-900">
+                    {stat.number}
+                  </h3>
 
-                <h3 className="mt-2 text-3xl sm:text-4xl font-semibold text-neutral-900">
-                  {stat.number}
-                </h3>
+                  <p className="relative mt-1 inline-block text-xs sm:text-sm text-neutral-500">
+                    {stat.title}
 
-                <p className="relative mt-2 inline-block text-sm text-neutral-500">
-                  {stat.title}
+                    <span
+                      className="
+                        absolute
+                        left-1/2
+                        bottom-[-4px]
+                        h-[1.5px]
+                        w-0
+                        -translate-x-1/2
+                        rounded-full
+                        bg-neutral-800
+                        transition-all
+                        duration-300
+                        group-hover:w-full
+                      "
+                    />
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-                  <span
-                    className="
-                      absolute
-                      left-1/2
-                      bottom-[-4px]
-                      h-[1.5px]
-                      w-0
-                      -translate-x-1/2
-                      rounded-full
-                      bg-neutral-800
-                      transition-all
-                      duration-300
-                      group-hover:w-full
-                    "
-                  />
-                </p>
-              </motion.div>
-            ))}
+</div>
 
-          </div>
-        </motion.div>
-
-      </div>
-    </section>
+</section>
 
     {/* ====================================================== */}
     {/* SKILLS MODAL */}

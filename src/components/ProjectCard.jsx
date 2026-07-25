@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { HiOutlineArrowUpRight } from "react-icons/hi2";
 
 export default function ProjectCard({ project, onClick }) {
   return (
@@ -39,26 +40,21 @@ export default function ProjectCard({ project, onClick }) {
     >
       {/* IMAGE */}
 
-      <div className="overflow-hidden p-4 pb-0">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="
-            h-48
-            w-full
-
-            rounded-2xl
-
-            object-cover
-            object-top
-
-            transition-all
-            duration-700
-
-            group-hover:scale-105
-          "
-        />
-      </div>
+      <div className="overflow-hidden rounded-2xl mx-4 mt-4">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="
+          h-52
+          w-full
+          object-cover
+          object-top
+          transition-all
+          duration-700
+          group-hover:scale-105
+        "
+      />
+    </div>
 
       {/* CONTENT */}
 
@@ -167,7 +163,7 @@ export default function ProjectCard({ project, onClick }) {
             "
           >
             View Project
-            <span>↗</span>
+            <HiOutlineArrowUpRight className="h-3 w-3" />
           </motion.div>
 
         </div>

@@ -121,38 +121,90 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          <a
-  href="/resume_janinalaine_platero.pdf"
-  className="
-    inline-flex
-    items-center
-    gap-3
+          <div className="relative group">
+          <button
+          className="
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            border
+            border-neutral-300
+            bg-white/70
+            px-6
+            py-3
+            text-sm
+            font-medium
+            text-neutral-800
+            shadow-lg
+            shadow-neutral-200/50
+            transition-all
+            duration-300
+            hover:-translate-y-1
+            hover:border-[#360c13]
+          "
+        >
+          Download Resume
+          <span className="text-xs transition-transform duration-200 group-hover:rotate-180">
+            ▼
+          </span>
+        </button>
 
-    rounded-full
-    border
-    border-neutral-300
+          <div
+            className="
+              invisible
+              absolute
+              left-1/2
+              top-full
+              z-50
+              mt-3
+              w-72
+              -translate-x-1/2
+              rounded-2xl
+              border
+              border-neutral-200
+              bg-white/90
+              p-2
+              shadow-xl
+              backdrop-blur-xl
+              opacity-0
+              translate-y-2
+              transition-all
+              duration-200
+              group-hover:visible
+              group-hover:opacity-100
+              group-hover:translate-y-0
+            "
+          >
+            <a
+              href="/JaninalainePlatero_Resume_PowerPlatform.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-xl px-4 py-3 transition hover:bg-pink-50"
+            >
+              <p className="font-medium text-neutral-800">
+                Power Platform Resume
+              </p>
+              <p className="text-xs text-neutral-500">
+                Power Apps • Power Automate • SharePoint
+              </p>
+            </a>
 
-    bg-white/70
-
-    px-6
-    py-3
-
-    text-sm
-    font-medium
-    text-neutral-800
-
-    shadow-lg
-    shadow-neutral-200/50
-
-    transition-all
-    duration-300
-
-    hover:-translate-y-1
-    hover:border-[#360c13]
-  "
->
-  Download Resume →
-</a>
+            <a
+              href="/JaninalainePlatero_Resume_WebDev.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 block rounded-xl px-4 py-3 transition hover:bg-pink-50"
+            >
+              <p className="font-medium text-neutral-800">
+                Web Development Resume
+              </p>
+              <p className="text-xs text-neutral-500">
+                React • WordPress • Frontend
+              </p>
+            </a>
+          </div>
+        </div>
         </motion.div>
 
         {/* Typewriter */}

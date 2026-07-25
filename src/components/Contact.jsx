@@ -216,45 +216,93 @@ export default function Contact() {
 
             {/* BUTTON */}
 
-            <a
-              href="/resume_janinalaine_platero.pdf"
-              className="
-                inline-flex
-                items-center
-                gap-3
+            {/* RESUMES */}
 
-                rounded-full
-                border
-                border-neutral-300
+            <p className="mb-3 text-sm font-medium text-neutral-400">
+              Resume
+            </p>
 
-                bg-white/70
+            <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+              <a
+                href="/JaninalainePlatero_Resume_PowerPlatform.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
 
-                px-6
-                py-3
+                  rounded-full
+                  border
+                  border-neutral-300
+                  bg-white/70
 
-                text-sm
-                font-medium
-                text-neutral-800
+                  px-6
+                  py-3
 
-                shadow-lg
-                shadow-neutral-200/50
+                  text-sm
+                  font-medium
+                  text-neutral-800
 
-                backdrop-blur-xl
+                  shadow-lg
+                  shadow-neutral-200/50
+                  backdrop-blur-xl
 
-                transition-all
-                duration-300
+                  transition-all
+                  duration-300
 
-                hover:-translate-y-1
-                hover:border-[#360c13]
-                hover:bg-white
-                hover:shadow-xl
-                hover:shadow-[#360c13]/10
+                  hover:-translate-y-1
+                  hover:border-[#360c13]
+                  hover:bg-white
+                  hover:shadow-xl
+                  hover:shadow-[#360c13]/10
 
-                active:scale-95
-              "
-            >
-              Download Resume →
-            </a>
+                  active:scale-95
+                "
+              >
+                Power Platform ↓
+              </a>
+
+              <a
+                href="/JaninalainePlatero_Resume_WebDev.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+
+                  rounded-full
+                  border
+                  border-neutral-300
+                  bg-white/70
+
+                  px-6
+                  py-3
+
+                  text-sm
+                  font-medium
+                  text-neutral-800
+
+                  shadow-lg
+                  shadow-neutral-200/50
+                  backdrop-blur-xl
+
+                  transition-all
+                  duration-300
+
+                  hover:-translate-y-1
+                  hover:border-[#360c13]
+                  hover:bg-white
+                  hover:shadow-xl
+                  hover:shadow-[#360c13]/10
+
+                  active:scale-95
+                "
+              >
+                Web Development ↓
+              </a>
+            </div>
           </motion.div>
         </div>
 
