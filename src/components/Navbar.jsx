@@ -18,7 +18,7 @@ export default function Navbar() {
       <div
         className="
           hidden
-          md:block
+          min-[900px]:block
 
           rounded-full
           border
@@ -37,16 +37,19 @@ export default function Navbar() {
         <nav className="flex items-center justify-center gap-2">
 
           {links.map((link, index) => (
-            <div
-              key={link}
-              className="flex items-center gap-2"
-            >
+            <div key={link} className="flex items-center gap-2">
 
               <a
                 href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
                 className="
                   group
                   relative
+
+                  flex
+                  items-center
+                  justify-center
+
+                  whitespace-nowrap
 
                   rounded-full
 
@@ -70,7 +73,6 @@ export default function Navbar() {
                   hover:-translate-y-0.5
                   hover:border-black
                   hover:text-black
-
                   hover:shadow-lg
                 "
               >
@@ -79,7 +81,6 @@ export default function Navbar() {
                 <span
                   className="
                     absolute
-
                     left-1/2
                     bottom-2
 
@@ -100,7 +101,7 @@ export default function Navbar() {
               </a>
 
               {index !== links.length - 1 && (
-                <span className="text-xs text-neutral-400">
+                <span className="select-none text-xs text-neutral-400">
                   ✦
                 </span>
               )}
@@ -112,10 +113,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile */}
-
-      <div className="md:hidden">
-
-        {/* Floating Button */}
+      <div className="min-[900px]:hidden">
 
         <button
           onClick={() => setOpen(!open)}
@@ -136,12 +134,15 @@ export default function Navbar() {
             backdrop-blur-2xl
 
             shadow-xl
+
+            transition-all
+            duration-300
+
+            hover:scale-105
           "
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
-
-        {/* Menu */}
 
         {open && (
           <div
@@ -165,7 +166,6 @@ export default function Navbar() {
               shadow-2xl
             "
           >
-
             {links.map((link) => (
               <a
                 key={link}
@@ -186,6 +186,7 @@ export default function Navbar() {
                   py-3
 
                   text-sm
+                  font-medium
                   text-neutral-700
 
                   transition-all
@@ -198,7 +199,6 @@ export default function Navbar() {
                 {link}
               </a>
             ))}
-
           </div>
         )}
 
