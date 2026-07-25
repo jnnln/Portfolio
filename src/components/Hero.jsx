@@ -1,7 +1,30 @@
+import { useState, useRef, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
+
   const fadeUp = {
     hidden: {
       opacity: 0,
@@ -54,7 +77,6 @@ export default function Hero() {
       />
 
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-
         {/* Hello World */}
 
         <motion.p
@@ -121,90 +143,98 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          <div className="relative group">
-          <button
-          className="
-            inline-flex
-            items-center
-            gap-2
-            rounded-full
-            border
-            border-neutral-300
-            bg-white/70
-            px-6
-            py-3
-            text-sm
-            font-medium
-            text-neutral-800
-            shadow-lg
-            shadow-neutral-200/50
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:border-[#360c13]
-          "
-        >
-          Download Resume
-          <span className="text-xs transition-transform duration-200 group-hover:rotate-180">
-            ▼
-          </span>
-        </button>
+          {/* Resume Dropdown */}
 
-          <div
-            className="
-              invisible
-              absolute
-              left-1/2
-              top-full
-              z-50
-              mt-3
-              w-72
-              -translate-x-1/2
-              rounded-2xl
-              border
-              border-neutral-200
-              bg-white/90
-              p-2
-              shadow-xl
-              backdrop-blur-xl
-              opacity-0
-              translate-y-2
-              transition-all
-              duration-200
-              group-hover:visible
-              group-hover:opacity-100
-              group-hover:translate-y-0
-            "
-          >
-            <a
-              href="/JaninalainePlatero_Resume_PowerPlatform.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-xl px-4 py-3 transition hover:bg-pink-50"
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setOpen(!open)}
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-neutral-300
+                bg-white/70
+                px-6
+                py-3
+                text-sm
+                font-medium
+                text-neutral-800
+                shadow-lg
+                shadow-neutral-200/50
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-[#360c13]
+              "
             >
-              <p className="font-medium text-neutral-800">
-                Power Platform Resume
-              </p>
-              <p className="text-xs text-neutral-500">
-                Power Apps • Power Automate • SharePoint
-              </p>
-            </a>
+              Download Resume
+              <span
+                className={`text-xs transition-transform duration-300 ${
+                  open ? "rotate-180" : ""
+                }`}
+              >
+                ▼
+              </span>
+            </button>
 
-            <a
-              href="/JaninalainePlatero_Resume_WebDev.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 block rounded-xl px-4 py-3 transition hover:bg-pink-50"
+            <div
+              className={`
+                absolute
+                left-1/2
+                top-full
+                z-50
+                mt-3
+                w-72
+                -translate-x-1/2
+                rounded-2xl
+                border
+                border-neutral-200
+                bg-white/95
+                p-2
+                shadow-xl
+                backdrop-blur-xl
+                transition-all
+                duration-200
+                ${
+                  open
+                    ? "visible opacity-100 translate-y-0"
+                    : "invisible opacity-0 translate-y-2"
+                }
+              `}
             >
-              <p className="font-medium text-neutral-800">
-                Web Development Resume
-              </p>
-              <p className="text-xs text-neutral-500">
-                React • WordPress • Frontend
-              </p>
-            </a>
+              <a
+                href="/JaninalainePlatero_Resume_PowerPlatform.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-4 py-3 transition hover:bg-pink-50"
+              >
+                <p className="font-medium text-neutral-800">
+                  Power Platform Resume
+                </p>
+                <p className="text-xs text-neutral-500">
+                  Power Apps • Power Automate • SharePoint
+                </p>
+              </a>
+
+              <a
+                href="/JaninalainePlatero_Resume_WebDev.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="mt-1 block rounded-xl px-4 py-3 transition hover:bg-pink-50"
+              >
+                <p className="font-medium text-neutral-800">
+                  Web Development Resume
+                </p>
+                <p className="text-xs text-neutral-500">
+                  React • WordPress • Frontend
+                </p>
+              </a>
+            </div>
           </div>
-        </div>
         </motion.div>
 
         {/* Typewriter */}
@@ -245,9 +275,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1 }}
           className="mt-4 max-w-md text-sm leading-6 text-neutral-500"
         >
-         Turning ideas into business solutions through Power Apps, Power Automate, and thoughtful digital design.
+          Turning ideas into business solutions through Power Apps,
+          Power Automate, and thoughtful digital design.
         </motion.p>
-
       </div>
     </section>
   );
