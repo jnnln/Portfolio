@@ -56,9 +56,7 @@ export default function CreativeWorks() {
     setSelectedWork((prev) => {
       if (prev === null) return null;
 
-      return prev === works.length - 1
-        ? 0
-        : prev + 1;
+      return prev === works.length - 1 ? 0 : prev + 1;
     });
   };
 
@@ -70,9 +68,7 @@ export default function CreativeWorks() {
     setSelectedWork((prev) => {
       if (prev === null) return null;
 
-      return prev === 0
-        ? works.length - 1
-        : prev - 1;
+      return prev === 0 ? works.length - 1 : prev - 1;
     });
   };
 
@@ -128,9 +124,21 @@ export default function CreativeWorks() {
             INTRO + FOLDER
         ===================================================== */}
 
-        <div className="flex flex-col items-center justify-between gap-12 md:flex-row md:items-center">
+        <div
+          className="
+            flex
+            flex-col
+            items-center
+            justify-between
+            gap-12
+            md:flex-row
+            md:items-center
+          "
+        >
 
-          {/* LEFT — TEXT */}
+          {/* =================================================
+              LEFT — TEXT
+          ================================================= */}
 
           <motion.div
             initial={{
@@ -149,10 +157,18 @@ export default function CreativeWorks() {
               duration: 0.7,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="max-w-md text-center md:text-left"
+            className="
+              max-w-md
+              text-center
+              md:text-left
+            "
           >
             <h2
-              className="text-4xl tracking-tight md:text-5xl"
+              className="
+                text-4xl
+                tracking-tight
+                md:text-5xl
+              "
               style={{
                 fontFamily: "Cavalhatriz",
               }}
@@ -160,14 +176,24 @@ export default function CreativeWorks() {
               Creative Works
             </h2>
 
-            <p className="mt-4 text-sm leading-7 text-gray-500 md:text-base">
-              A collection of things I've made over the years using
-              Photoshop, Illustrator, Figma, and more.
+            <p
+              className="
+                mt-4
+                text-sm
+                leading-7
+                text-gray-500
+                md:text-base
+              "
+            >
+              A collection of things I've made over the years
+              using Photoshop, Illustrator, Figma, and more.
             </p>
           </motion.div>
 
 
-          {/* RIGHT — FOLDER */}
+          {/* =================================================
+              RIGHT — FOLDER
+          ================================================= */}
 
           <motion.div
             initial={{
@@ -188,7 +214,12 @@ export default function CreativeWorks() {
               duration: 0.7,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="flex w-full justify-center md:w-auto"
+            className="
+              flex
+              w-full
+              justify-center
+              md:w-auto
+            "
           >
 
             <motion.button
@@ -201,13 +232,17 @@ export default function CreativeWorks() {
               }
               className="
                 relative
-                h-52
-                w-72
+                h-48
+                w-64
                 cursor-pointer
                 border-0
                 bg-transparent
                 p-0
                 focus:outline-none
+
+                sm:h-52
+                sm:w-72
+
                 md:h-60
                 md:w-80
               "
@@ -217,28 +252,44 @@ export default function CreativeWorks() {
               whileTap={{
                 scale: 0.97,
               }}
+              transition={{
+                duration: 0.3,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
 
-              {/* FOLDER TAB */}
+              {/* =================================================
+                  FOLDER TAB
+              ================================================= */}
 
               <motion.div
                 className="
                   absolute
-                  left-5
+                  left-4
                   top-0
                   z-0
-                  h-10
-                  w-28
+                  h-8
+                  w-24
                   rounded-t-2xl
                   bg-[#e7d5c5]
+
+                  sm:left-5
+                  sm:h-10
+                  sm:w-28
                 "
                 animate={{
                   y: isOpen ? -4 : 0,
                 }}
+                transition={{
+                  duration: 0.45,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               />
 
 
-              {/* FOLDER BACK */}
+              {/* =================================================
+                  FOLDER BACK
+              ================================================= */}
 
               <motion.div
                 className="
@@ -253,25 +304,35 @@ export default function CreativeWorks() {
                 animate={{
                   rotate: isOpen ? -3 : 0,
                 }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               />
 
 
-              {/* IMAGES INSIDE FOLDER */}
+              {/* =================================================
+                  CREATIVE PREVIEWS
+              ================================================= */}
 
               <div
                 className="
                   absolute
-                  left-6
-                  right-6
-                  top-[42px]
+                  left-5
+                  right-5
+                  top-[38px]
                   z-10
-                  h-[150px]
+                  h-[135px]
                   overflow-visible
+
+                  sm:left-6
+                  sm:right-6
+                  sm:top-[42px]
+                  sm:h-[150px]
                 "
               >
 
                 {works.map((work, index) => {
-
                   const rotations = [-10, -5, 0, 5, 10];
 
                   return (
@@ -282,38 +343,43 @@ export default function CreativeWorks() {
                       className="
                         absolute
                         left-1/2
-                        h-32
-                        w-24
+                        h-24
+                        w-[72px]
                         -translate-x-1/2
-                        rounded-xl
+                        rounded-lg
                         object-cover
                         shadow-lg
+
+                        sm:h-32
+                        sm:w-24
+                        sm:rounded-xl
                       "
                       style={{
                         zIndex: index + 1,
                       }}
                       initial={{
-                        y: 55,
+                        y: 45,
                         x: "-50%",
                         rotate: 0,
                         scale: 0.9,
                       }}
                       animate={{
                         y: isOpen
-                          ? -45 - Math.abs(index - 2) * 8
-                          : 55,
+                          ? -35 -
+                            Math.abs(index - 2) * 6
+                          : 45,
 
                         x: isOpen
-                          ? `calc(-50% + ${(index - 2) * 48}px)`
+                          ? `calc(-50% + ${
+                              (index - 2) * 38
+                            }px)`
                           : "-50%",
 
                         rotate: isOpen
                           ? rotations[index]
                           : 0,
 
-                        scale: isOpen
-                          ? 1
-                          : 0.9,
+                        scale: isOpen ? 1 : 0.9,
                       }}
                       transition={{
                         duration: 0.55,
@@ -327,7 +393,9 @@ export default function CreativeWorks() {
               </div>
 
 
-              {/* FOLDER FRONT */}
+              {/* =================================================
+                  FOLDER FRONT
+              ================================================= */}
 
               <motion.div
                 className="
@@ -335,26 +403,46 @@ export default function CreativeWorks() {
                   bottom-0
                   left-0
                   z-20
-                  h-[72%]
+                  h-[78%]
                   w-full
                   overflow-hidden
                   rounded-3xl
                   bg-[#d9bda7]
                   shadow-xl
+
+                  sm:h-[75%]
+
+                  md:h-[72%]
                 "
                 animate={{
                   y: isOpen ? 12 : 0,
                   rotateX: isOpen ? 8 : 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 style={{
                   transformOrigin: "bottom",
                 }}
               >
 
-                <div className="flex h-full flex-col items-center justify-center">
+                <div
+                  className="
+                    flex
+                    h-full
+                    flex-col
+                    items-center
+                    justify-center
+                  "
+                >
 
                   <span
-                    className="text-2xl text-[#49372d] md:text-3xl"
+                    className="
+                      text-2xl
+                      text-[#49372d]
+                      md:text-3xl
+                    "
                     style={{
                       fontFamily: "Cavalhatriz",
                     }}
@@ -363,9 +451,16 @@ export default function CreativeWorks() {
                   </span>
 
                   <motion.span
-                    className="mt-2 text-xs text-[#725c4d]"
+                    className="
+                      mt-2
+                      text-xs
+                      text-[#725c4d]
+                    "
                     animate={{
                       opacity: isOpen ? 0 : 1,
+                    }}
+                    transition={{
+                      duration: 0.2,
                     }}
                   >
                     Click to open
@@ -383,12 +478,11 @@ export default function CreativeWorks() {
 
 
         {/* =====================================================
-            GALLERY
+            EXPANDED GALLERY
         ===================================================== */}
 
         <AnimatePresence>
           {isOpen && (
-
             <motion.div
               initial={{
                 opacity: 0,
@@ -414,10 +508,16 @@ export default function CreativeWorks() {
 
               <div className="mt-16">
 
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+                <div
+                  className="
+                    grid
+                    grid-cols-2
+                    gap-4
+                    md:grid-cols-5
+                  "
+                >
 
                   {works.map((work, index) => (
-
                     <motion.button
                       key={work.title}
                       type="button"
@@ -431,6 +531,11 @@ export default function CreativeWorks() {
                         opacity: 1,
                         y: 0,
                         scale: 1,
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: 15,
+                        scale: 0.95,
                       }}
                       transition={{
                         duration: 0.5,
@@ -463,8 +568,10 @@ export default function CreativeWorks() {
                         }}
                         transition={{
                           duration: 0.5,
+                          ease: [0.22, 1, 0.36, 1],
                         }}
                       />
+
 
                       {/* TITLE */}
 
@@ -480,10 +587,17 @@ export default function CreativeWorks() {
                           pt-10
                         "
                       >
-                        <p className="text-xs font-medium text-white">
+                        <p
+                          className="
+                            text-xs
+                            font-medium
+                            text-white
+                          "
+                        >
                           {work.title}
                         </p>
                       </div>
+
 
                       {/* VIEW ICON */}
 
@@ -512,7 +626,6 @@ export default function CreativeWorks() {
                       </div>
 
                     </motion.button>
-
                   ))}
 
                 </div>
@@ -520,7 +633,6 @@ export default function CreativeWorks() {
               </div>
 
             </motion.div>
-
           )}
         </AnimatePresence>
 
@@ -528,13 +640,11 @@ export default function CreativeWorks() {
 
 
       {/* =====================================================
-          FULLSCREEN VIEWER
+          FULLSCREEN IMAGE VIEWER
       ===================================================== */}
 
       <AnimatePresence>
-
         {selectedWork !== null && (
-
           <motion.div
             initial={{
               opacity: 0,
@@ -545,6 +655,10 @@ export default function CreativeWorks() {
             exit={{
               opacity: 0,
             }}
+            transition={{
+              duration: 0.25,
+            }}
+            onClick={closeWork}
             className="
               fixed
               inset-0
@@ -555,12 +669,14 @@ export default function CreativeWorks() {
               bg-black/90
               p-4
               backdrop-blur-sm
+
               sm:p-8
             "
-            onClick={closeWork}
           >
 
-            {/* CLOSE */}
+            {/* =================================================
+                CLOSE
+            ================================================= */}
 
             <button
               type="button"
@@ -570,7 +686,7 @@ export default function CreativeWorks() {
                 absolute
                 right-5
                 top-5
-                z-30
+                z-40
                 flex
                 h-11
                 w-11
@@ -606,7 +722,7 @@ export default function CreativeWorks() {
                 absolute
                 left-3
                 top-1/2
-                z-30
+                z-40
                 flex
                 h-11
                 w-11
@@ -622,6 +738,7 @@ export default function CreativeWorks() {
                 duration-300
                 hover:scale-105
                 hover:bg-white/20
+
                 sm:left-6
                 sm:h-12
                 sm:w-12
@@ -646,7 +763,7 @@ export default function CreativeWorks() {
                 absolute
                 right-3
                 top-1/2
-                z-30
+                z-40
                 flex
                 h-11
                 w-11
@@ -662,6 +779,7 @@ export default function CreativeWorks() {
                 duration-300
                 hover:scale-105
                 hover:bg-white/20
+
                 sm:right-6
                 sm:h-12
                 sm:w-12
@@ -672,7 +790,7 @@ export default function CreativeWorks() {
 
 
             {/* =================================================
-                IMAGE
+                IMAGE + TITLE
             ================================================= */}
 
             <AnimatePresence mode="wait">
@@ -705,15 +823,18 @@ export default function CreativeWorks() {
                 "
               >
 
+                {/* FULL IMAGE */}
+
                 <img
                   src={works[selectedWork].image}
                   alt={works[selectedWork].title}
                   className="
-                    max-h-[82vh]
-                    max-w-[85vw]
+                    max-h-[80vh]
+                    max-w-[82vw]
                     rounded-2xl
                     object-contain
                     shadow-2xl
+
                     sm:max-h-[86vh]
                     sm:max-w-[80vw]
                   "
@@ -726,17 +847,22 @@ export default function CreativeWorks() {
                   className="
                     mt-4
                     flex
+                    max-w-[80vw]
                     items-center
                     gap-3
                     rounded-full
                     bg-white/10
                     px-5
                     py-2.5
-                    text-sm
+                    text-center
+                    text-xs
                     text-white
                     backdrop-blur-md
+
+                    sm:text-sm
                   "
                 >
+
                   <span>
                     {works[selectedWork].title}
                   </span>
@@ -748,6 +874,7 @@ export default function CreativeWorks() {
                   <span className="text-white/60">
                     {selectedWork + 1} / {works.length}
                   </span>
+
                 </div>
 
               </motion.div>
@@ -755,9 +882,7 @@ export default function CreativeWorks() {
             </AnimatePresence>
 
           </motion.div>
-
         )}
-
       </AnimatePresence>
 
     </section>
