@@ -5,11 +5,22 @@ export default function ProjectCard({ project, onClick }) {
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.4 }}
+      initial={{
+        opacity: 0,
+        y: 18,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.15,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       onClick={() => onClick(project)}
       className="
         group
@@ -18,157 +29,264 @@ export default function ProjectCard({ project, onClick }) {
         cursor-pointer
         flex-col
         overflow-hidden
-
         rounded-[28px]
-
         border
         border-neutral-200/80
-
         bg-white/60
-
         shadow-lg
         shadow-black/5
-
         backdrop-blur-xl
-
-        transition-all
-        duration-500
-
+        transition-colors
+        duration-300
         hover:border-neutral-400
-        hover:shadow-2xl
       "
     >
-      {/* IMAGE */}
 
-      <div className="overflow-hidden rounded-2xl mx-4 mt-4">
-      <img
-        src={project.image}
-        alt={project.title}
+      {/* =====================================================
+          IMAGE
+      ===================================================== */}
+
+      <div
         className="
+          mx-4
+          mt-4
           h-52
-          w-full
-          object-cover
-          object-top
-          transition-all
-          duration-700
-          group-hover:scale-105
+          shrink-0
+          overflow-hidden
+          rounded-2xl
         "
-      />
-    </div>
+      >
+        <img
+          src={project.image}
+          alt={project.title}
+          className="
+            block
+            h-full
+            w-full
+            object-cover
+            object-top
+          "
+        />
+      </div>
 
-      {/* CONTENT */}
+
+      {/* =====================================================
+          CONTENT
+      ===================================================== */}
 
       <div className="flex flex-1 flex-col p-4">
 
-        {/* Subtitle */}
+        {/* ===================================================
+            TITLE
+        =================================================== */}
 
-        <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-400">
-          {project.subtitle}
-        </p>
+        <div className="min-h-[48px]">
 
-        {/* Title */}
-
-        <div className="mt-2 flex items-start justify-between gap-3">
-
-          <h3 className="min-h-[48px] text-lg font-semibold leading-6 text-neutral-900">
+          <h3
+            className="
+              text-lg
+              font-semibold
+              leading-6
+              text-neutral-900
+            "
+          >
             {project.title}
           </h3>
 
-          {project.status && (
-            <span
-              className="
-                rounded-full
-
-                border
-                border-neutral-300
-
-                bg-neutral-100
-
-                px-2.5
-                py-1
-
-                text-[10px]
-                font-medium
-
-                text-neutral-700
-              "
-            >
-              {project.status}
-            </span>
-          )}
-
         </div>
 
-        {/* Overview */}
 
-        <p className="mt-2 line-clamp-3 text-sm leading-5 text-neutral-500">
+        {/* ===================================================
+            DESCRIPTION
+        =================================================== */}
+
+        <p
+          className="
+            mt-3
+            min-h-[60px]
+            line-clamp-3
+            text-sm
+            leading-5
+            text-neutral-500
+          "
+        >
           {project.overview}
         </p>
 
-        {/* Technologies */}
 
-        <div className="mt-3 flex flex-wrap gap-2">
+        {/* ===================================================
+            TECHNOLOGIES
+        =================================================== */}
 
-          {project.technologies.slice(0, 3).map((tech) => (
-            <span
-              key={tech}
-              className="
-                rounded-full
+        <div
+          className="
+            mt-5
+            min-h-[24px]
+            flex
+            flex-wrap
+            items-center
+            gap-x-3
+            gap-y-1
+          "
+        >
 
-                border
-                border-neutral-300
+          {project.technologies
+            .slice(0, 3)
+            .map((tech, index) => (
 
-                bg-neutral-100
+              <span
+                key={tech}
+                className="
+                  text-xs
+                  text-neutral-500
+                "
+              >
+                {tech}
+                {index < Math.min(project.technologies.length, 3) - 1 && (
+                  <span className="ml-3 text-neutral-300">
+                    •
+                  </span>
+                )}
+              </span>
 
-                px-3
-                py-1
-
-                text-[11px]
-                font-medium
-
-                text-neutral-700
-              "
-            >
-              {tech}
-            </span>
-          ))}
-
-          {project.technologies.length > 3 && (
-            <span className="self-center text-xs text-neutral-400">
-              +{project.technologies.length - 3}
-            </span>
-          )}
+            ))}
 
         </div>
 
-        {/* Footer */}
 
-        <div className="mt-auto flex items-center justify-between pt-4">
+        {/* ===================================================
+            BOTTOM
+        ===================================================== */}
 
-          <span className="text-xs text-neutral-400">
-            {project.year}
-          </span>
+        <div className="mt-auto">
 
-          <motion.div
-            whileHover={{ x: 3 }}
+          <div
             className="
               flex
               items-center
-              gap-2
-
-              text-sm
-              font-medium
-
-              text-neutral-800
+              justify-between
+              border-t
+              border-neutral-100
+              pt-4
             "
           >
-            View Project
-            <HiOutlineArrowUpRight className="h-3 w-3" />
-          </motion.div>
+
+            {/* YEAR */}
+
+            <span
+              className="
+                shrink-0
+                text-xs
+                text-neutral-400
+              "
+            >
+              {project.year}
+            </span>
+
+
+            {/* =================================================
+                LINKS
+            ================================================= */}
+
+            <div
+              className="
+                flex
+                flex-wrap
+                items-center
+                justify-end
+                gap-2
+              "
+              onClick={(e) => e.stopPropagation()}
+            >
+
+              {/* WEBSITE */}
+
+              {project.links?.website && (
+
+                <a
+                  href={project.links.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-1
+                    text-[11px]
+                    font-medium
+                    text-neutral-500
+                    transition-colors
+                    duration-300
+                    hover:text-neutral-900
+                  "
+                >
+                  Website
+                  <HiOutlineArrowUpRight className="h-3 w-3" />
+                </a>
+
+              )}
+
+
+              {/* KIOSK */}
+
+              {project.links?.kiosk && (
+
+                <a
+                  href={project.links.kiosk}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-1
+                    text-[11px]
+                    font-medium
+                    text-neutral-500
+                    transition-colors
+                    duration-300
+                    hover:text-neutral-900
+                  "
+                >
+                  Kiosk
+                  <HiOutlineArrowUpRight className="h-3 w-3" />
+                </a>
+
+              )}
+
+
+              {/* GITHUB */}
+
+              {project.links?.github && (
+
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-1
+                    text-[11px]
+                    font-medium
+                    text-neutral-500
+                    transition-colors
+                    duration-300
+                    hover:text-neutral-900
+                  "
+                >
+                  GitHub
+                  <HiOutlineArrowUpRight className="h-3 w-3" />
+                </a>
+
+              )}
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
+
     </motion.article>
   );
 }

@@ -8,68 +8,120 @@ export default function Contact() {
       className="
         relative
         flex
+        min-h-screen
         items-center
         overflow-hidden
 
-        min-h-screen
-
         px-5
-        sm:px-6
-        lg:px-8
-
         py-20
+
+        sm:px-6
         sm:py-24
-        lg:py-32
+
+        lg:px-8
+        lg:py-28
       "
     >
-      {/* Background Glow */}
+      {/* =====================================================
+          BACKGROUND
+      ===================================================== */}
 
-      <div className="absolute -left-40 top-0 h-[32rem] w-[32rem] rounded-full bg-pink-200/20 blur-[220px]" />
+      <div
+        className="
+          absolute
+          -left-40
+          top-0
+          h-[32rem]
+          w-[32rem]
+          rounded-full
+          bg-pink-200/20
+          blur-[220px]
+        "
+      />
 
-      <div className="absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-rose-200/20 blur-[220px]" />
+      <div
+        className="
+          absolute
+          -right-20
+          bottom-0
+          h-[28rem]
+          w-[28rem]
+          rounded-full
+          bg-rose-200/20
+          blur-[220px]
+        "
+      />
 
-      <div className="mx-auto w-full max-w-6xl">
-        <p className="mb-14 text-center text-sm text-neutral-400">
-          Thanks for scrolling this far ✦
-        </p>
+
+      {/* =====================================================
+          MAIN CONTENT
+      ===================================================== */}
+
+      <div
+        className="
+          mx-auto
+          w-full
+          max-w-5xl
+        "
+      >
 
         <div
           className="
             grid
+            grid-cols-1
             items-center
 
-            gap-16
+            gap-10
 
-            lg:grid-cols-[1.35fr_1fr]
+            sm:gap-12
+
+            lg:grid-cols-2
+            lg:gap-16
           "
         >
-          {/* LEFT */}
+
+          {/* =================================================
+              LEFT — HEADING
+          ================================================= */}
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="
-              flex
-              flex-col
+              mx-auto
+              w-full
+              max-w-[360px]
 
-              items-center
               text-center
 
-              lg:items-start
+              lg:mx-0
+              lg:justify-self-end
               lg:text-left
             "
           >
+
             <h2
               style={{ fontFamily: "Cavalhatriz" }}
               className="
                 leading-[0.95]
-
-                text-[3.6rem]
-                sm:text-[5rem]
-                lg:text-[6.8rem]
-
                 text-[#360c13]
+
+                text-[3.4rem]
+                sm:text-[4.5rem]
+                lg:text-[5.4rem]
               "
             >
               Let's
@@ -80,24 +132,50 @@ export default function Contact() {
               <br />
               great!
             </h2>
+
           </motion.div>
 
-          {/* RIGHT */}
+
+          {/* =================================================
+              RIGHT — CONTACT
+          ================================================= */}
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.7,
+              delay: 0.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="
-              space-y-10
+              mx-auto
+              w-full
+              max-w-[360px]
 
               text-center
+
+              lg:mx-0
+              lg:justify-self-start
               lg:text-left
             "
           >
-            {/* EMAIL */}
+
+            {/* =================================================
+                EMAIL
+            ================================================= */}
 
             <div>
+
               <p className="mb-3 text-sm font-medium text-neutral-400">
                 Email
               </p>
@@ -106,7 +184,6 @@ export default function Contact() {
                 href="mailto:janinalaine.platero@gmail.com"
                 className="
                   inline-block
-
                   break-all
 
                   border-b
@@ -115,32 +192,47 @@ export default function Contact() {
                   pb-1
 
                   text-base
-                  sm:text-lg
-                  lg:text-xl
-
                   font-medium
-
                   text-[#360c13]
 
-                  transition-all
+                  sm:text-lg
+
+                  transition-colors
                   duration-300
 
-                  hover:text-pink-500
                   hover:border-pink-500
+                  hover:text-pink-500
                 "
               >
                 janinalaine.platero@gmail.com
               </a>
 
-              <p className="mx-auto mt-5 max-w-sm text-sm leading-7 text-neutral-500 lg:mx-0">
-                Based in the Philippines and available for remote opportunities
-                worldwide.
+              <p
+                className="
+                  mx-auto
+                  mt-4
+                  max-w-[330px]
+
+                  text-sm
+                  leading-7
+                  text-neutral-500
+
+                  lg:mx-0
+                "
+              >
+                Based in the Philippines and available for remote
+                opportunities worldwide.
               </p>
+
             </div>
 
-            {/* SOCIALS */}
 
-            <div>
+            {/* =================================================
+                SOCIALS
+            ================================================= */}
+
+            <div className="mt-7">
+
               <p className="mb-4 text-sm font-medium text-neutral-400">
                 Socials
               </p>
@@ -150,12 +242,12 @@ export default function Contact() {
                   flex
                   flex-wrap
                   justify-center
-
                   gap-6
 
                   lg:justify-start
                 "
               >
+
                 <a
                   href="https://github.com/jnnln"
                   target="_blank"
@@ -167,10 +259,9 @@ export default function Contact() {
 
                     text-neutral-700
 
-                    transition-all
+                    transition-colors
                     duration-300
 
-                    hover:-translate-y-1
                     hover:text-pink-500
                   "
                 >
@@ -189,22 +280,27 @@ export default function Contact() {
 
                     text-neutral-700
 
-                    transition-all
+                    transition-colors
                     duration-300
 
-                    hover:-translate-y-1
                     hover:text-pink-500
                   "
                 >
                   <FaLinkedin size={18} />
                   LinkedIn
                 </a>
+
               </div>
+
             </div>
 
-            {/* AVAILABILITY */}
 
-            <div>
+            {/* =================================================
+                AVAILABILITY
+            ================================================= */}
+
+            <div className="mt-7">
+
               <p className="mb-3 text-sm font-medium text-neutral-400">
                 Currently Open For
               </p>
@@ -212,106 +308,122 @@ export default function Contact() {
               <p className="text-neutral-700">
                 ✦ Full-time Opportunities
               </p>
+
             </div>
 
-            {/* BUTTON */}
 
-            {/* RESUMES */}
+            {/* =================================================
+                RESUME
+            ================================================= */}
 
-            <p className="mb-3 text-sm font-medium text-neutral-400">
-              Resume
-            </p>
+            <div className="mt-7">
 
-            <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-              <a
-                href="/JaninalainePlatero_Resume_PowerPlatform.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <p className="mb-3 text-sm font-medium text-neutral-400">
+                Resume
+              </p>
+
+              <div
                 className="
-                  inline-flex
-                  items-center
+                  flex
+                  flex-wrap
                   justify-center
+                  gap-3
 
-                  rounded-full
-                  border
-                  border-neutral-300
-                  bg-white/70
-
-                  px-6
-                  py-3
-
-                  text-sm
-                  font-medium
-                  text-neutral-800
-
-                  shadow-lg
-                  shadow-neutral-200/50
-                  backdrop-blur-xl
-
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-1
-                  hover:border-[#360c13]
-                  hover:bg-white
-                  hover:shadow-xl
-                  hover:shadow-[#360c13]/10
-
-                  active:scale-95
+                  lg:justify-start
                 "
               >
-                Power Platform ↓
-              </a>
 
-              <a
-                href="/JaninalainePlatero_Resume_WebDev.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
+                <a
+                  href="/JaninalainePlatero_Resume_PowerPlatform.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
 
-                  rounded-full
-                  border
-                  border-neutral-300
-                  bg-white/70
+                    rounded-full
 
-                  px-6
-                  py-3
+                    border
+                    border-neutral-300
 
-                  text-sm
-                  font-medium
-                  text-neutral-800
+                    bg-white/70
 
-                  shadow-lg
-                  shadow-neutral-200/50
-                  backdrop-blur-xl
+                    px-5
+                    py-2.5
 
-                  transition-all
-                  duration-300
+                    text-sm
+                    font-medium
+                    text-neutral-800
 
-                  hover:-translate-y-1
-                  hover:border-[#360c13]
-                  hover:bg-white
-                  hover:shadow-xl
-                  hover:shadow-[#360c13]/10
+                    shadow-sm
+                    shadow-neutral-200/50
 
-                  active:scale-95
-                "
-              >
-                Web Development ↓
-              </a>
+                    backdrop-blur-xl
+
+                    transition-colors
+                    duration-300
+
+                    hover:border-[#360c13]
+                    hover:bg-white
+
+                    active:scale-95
+                  "
+                >
+                  Power Platform ↓
+                </a>
+
+
+                <a
+                  href="/JaninalainePlatero_Resume_WebDev.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+
+                    rounded-full
+
+                    border
+                    border-neutral-300
+
+                    bg-white/70
+
+                    px-5
+                    py-2.5
+
+                    text-sm
+                    font-medium
+                    text-neutral-800
+
+                    shadow-sm
+                    shadow-neutral-200/50
+
+                    backdrop-blur-xl
+
+                    transition-colors
+                    duration-300
+
+                    hover:border-[#360c13]
+                    hover:bg-white
+
+                    active:scale-95
+                  "
+                >
+                  Web Development ↓
+                </a>
+
+              </div>
+
             </div>
+
           </motion.div>
+
         </div>
 
-        {/* Footer */}
-
-        <div className="mt-24 text-center text-sm text-neutral-400">
-          Designed & developed by Janina ♡
-        </div>
       </div>
+
     </section>
   );
 }

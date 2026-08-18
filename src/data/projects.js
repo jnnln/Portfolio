@@ -4,10 +4,9 @@ import ObservershipDashboard2 from "../assets/projects/observership/dashboard2.p
 import ObservershipDashboard3 from "../assets/projects/observership/dashboard3.png";
 import ObservershipDashboard4 from "../assets/projects/observership/dashboard4.png";
 import ObservershipDashboard5 from "../assets/projects/observership/dashboard5.png";
-import ObservershipDashboard6 from "../assets/projects/observership/dashboard6.png";
 
 import ObservershipApplicant from "../assets/projects/observership/applicant.png";
-import ObservershipApplicant1 from "../assets/projects/observership/applicant1.png"; 
+import ObservershipApplicant1 from "../assets/projects/observership/applicant1.png";
 
 import Mentorship from "../assets/projects/mentorship/cover.png";
 import Mentorship1 from "../assets/projects/mentorship/screen1.png";
@@ -16,15 +15,29 @@ import Mentorship3 from "../assets/projects/mentorship/screen3.png";
 import Mentorship4 from "../assets/projects/mentorship/screen4.png";
 
 import AmeriYoung from "../assets/projects/ameriyoung/cover.png";
+import AmeriYoung1 from "../assets/projects/ameriyoung/1.png";
+import AmeriYoung2 from "../assets/projects/ameriyoung/2.png";
+import AmeriYoung3 from "../assets/projects/ameriyoung/3.png";
 
 import Mocra from "../assets/projects/mocra/cover.png";
 import Mocra1 from "../assets/projects/mocra/mocra1.png";
 
 import LaanRMS from "../assets/projects/laanrms/cover.png";
+import LaanRMS1 from "../assets/projects/laanrms/screen1.png";
+import LaanRMS2 from "../assets/projects/laanrms/screen2.png";
+import LaanRMS3 from "../assets/projects/laanrms/screen3.png";
+import LaanRMS4 from "../assets/projects/laanrms/screen4.png";
+import LaanRMS5 from "../assets/projects/laanrms/screen5.png";
+import LaanRMS6 from "../assets/projects/laanrms/screen6.png";
 
 import Elaan from "../assets/projects/elaan/cover.png";
 
+
 export const projects = [
+
+  // ============================================================
+  // AMERIYOUNG
+  // ============================================================
 
   {
     id: 1,
@@ -39,6 +52,9 @@ export const projects = [
 
     images: [
       AmeriYoung,
+      AmeriYoung1,
+      AmeriYoung2,
+      AmeriYoung3,
     ],
 
     technologies: [
@@ -47,6 +63,11 @@ export const projects = [
       "WooCommerce",
       "PWA",
     ],
+
+    links: {
+      website: "https://ameriyoung.com/",
+      kiosk: "https://ameriyoung.com/store8/",
+    },
 
     overview:
       "An in-progress website and self-service kiosk designed to provide customers with a seamless shopping experience for skincare products in both web and kiosk environments.",
@@ -67,68 +88,30 @@ export const projects = [
       "Responsive Design",
     ],
   },
+
+
+  // ============================================================
+  // MEDICAL OBSERVERSHIP
+  // ============================================================
+
   {
-  id: 2,
-
-  title: "Medical Observership",
-
-  subtitle: "Physician Dashboard",
-
-  year: "2026",
-
-  image: ObservershipDashboard,
-
-  images: [
-    ObservershipDashboard,
-    ObservershipDashboard1,
-    ObservershipDashboard2,
-    ObservershipDashboard3,
-    ObservershipDashboard4,
-    ObservershipDashboard5,
-    ObservershipDashboard6,
-  ],
-
-  technologies: [
-    "Power Apps",
-    "Power Automate",
-    "SharePoint",
-  ],
-
-  overview:
-    "A Power Platform solution that streamlines physician availability, schedule management, student matching, and observership administration using Power Apps, Power Automate, and SharePoint.",
-
-  contributions: [
-    "Developed the physician dashboard in Power Apps",
-    "Built Power Automate workflows for business processes",
-    "Implemented automated email notifications",
-    "Developed the physician onboarding process, including account creation, license verification, and onboarding workflows",
-    "Integrated SharePoint Lists, Microsoft Forms, and Microsoft Bookings",
-    "Provided ongoing maintenance and production support by troubleshooting issues, implementing bug fixes, and enhancing existing features",
-    "Created test cases and performed end-to-end system testing",
-  ],
-
-  features: [
-    "Physician Dashboard",
-    "Schedule & Availability Management",
-    "Task, notes, and meetings creation",
-    "Student Matching",
-    "Automated Email Notifications",
-  ],
-},
-  {
-    id: 3,
+    id: 2,
 
     title: "Medical Observership",
 
-    subtitle: "Applicant Form",
+    subtitle: "Physician Dashboard",
 
     year: "2026",
 
-    image: ObservershipApplicant,
+    image: ObservershipDashboard,
 
     images: [
-      ObservershipApplicant,
-      ObservershipApplicant1,
+      ObservershipDashboard,
+      ObservershipDashboard1,
+      ObservershipDashboard2,
+      ObservershipDashboard3,
+      ObservershipDashboard4,
+      ObservershipDashboard5,
     ],
 
     technologies: [
@@ -138,25 +121,34 @@ export const projects = [
     ],
 
     overview:
-      "A Power Apps application that enables students to complete observership forms, submit required information, and upload supporting documents.",
+      "A Power Platform solution that streamlines physician availability, schedule management, student matching, and observership administration using Power Apps, Power Automate, and SharePoint.",
 
     contributions: [
-      "Developed the Power Apps application",
-      "Built document upload functionality",
-      "Integrated SharePoint Lists",
-      "Implemented Power Automate workflows",
+      "Developed the physician dashboard in Power Apps",
+      "Built Power Automate workflows for business processes",
+      "Implemented automated email notifications",
+      "Developed the physician onboarding process, including account creation, license verification, and onboarding workflows",
+      "Integrated SharePoint Lists, Microsoft Forms, and Microsoft Bookings",
+      "Provided ongoing maintenance and production support by troubleshooting issues, implementing bug fixes, and enhancing existing features",
+      "Created test cases and performed end-to-end system testing",
     ],
 
     features: [
-      "Power Apps Forms",
-      "Document Upload",
+      "Physician Dashboard",
+      "Schedule & Availability Management",
+      "Task, notes, and meetings creation",
+      "Student Matching",
       "Automated Email Notifications",
-      "SharePoint Integration",
     ],
   },
 
+
+  // ============================================================
+  // RISE HIGH MENTORSHIP
+  // ============================================================
+
   {
-    id: 4,
+    id: 3,
 
     title: "Rise High Mentorship",
 
@@ -199,10 +191,119 @@ export const projects = [
       "Mentee Profiles",
       "Statistics Overview",
     ],
-  },  
+  },
+
+
+  // ============================================================
+  // eLAAN
+  // ============================================================
+
+  {
+    id: 4,
+
+    title: "eLaan",
+
+    subtitle: "Equipment Borrowing & Appointment System",
+
+    year: "2024",
+
+    image: Elaan,
+
+    images: [
+      Elaan,
+    ],
+
+    technologies: [
+      "SvelteKit",
+      "Flask",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Figma",
+    ],
+
+    links: {
+      github: "https://github.com/DFLCD-interns/flcd-app",
+    },
+
+    overview:
+      "A web application developed during my software engineering internship at the UP Department of Family Life and Child Development to streamline equipment borrowing and appointment management.",
+
+    contributions: [
+      "Developed responsive front-end interfaces using SvelteKit and Tailwind CSS",
+      "Designed user interfaces and interactive prototypes in Figma",
+      "Integrated Flask APIs with the front end",
+      "Collaborated with the development team to improve application reliability and performance",
+      "Implemented feature enhancements and bug fixes",
+    ],
+
+    features: [
+      "Equipment Borrowing",
+      "Appointment Scheduling",
+      "Inventory Management",
+      "Admin Dashboard",
+      "Responsive Interface",
+    ],
+  },
+
+
+  // ============================================================
+  // LAAN RMS
+  // ============================================================
 
   {
     id: 5,
+
+    title: "LAAN RMS",
+
+    subtitle: "NSRC Resource Management System",
+
+    year: "2023",
+
+    image: LaanRMS,
+
+    images: [
+      LaanRMS,
+      LaanRMS1,
+      LaanRMS2,
+      LaanRMS3,
+      LaanRMS4,
+      LaanRMS5,
+      LaanRMS6,
+    ],
+
+    technologies: [
+      "Flask",
+      "PostgreSQL",
+      "REST APIs",
+    ],
+
+    overview:
+      "A web-based resource management system developed for the University of the Philippines National Service Reserve Corps (NSRC) to manage reservist information, announcements, and volunteer activities.",
+
+    contributions: [
+      "Developed backend services using Flask",
+      "Designed and implemented RESTful APIs",
+      "Designed and optimized PostgreSQL database structures",
+      "Implemented reliable client-server communication",
+      "Supported backend architecture and feature development",
+    ],
+
+    features: [
+      "Reservist Management",
+      "Volunteer Opportunities",
+      "Announcements",
+      "REST API",
+      "PostgreSQL Database",
+    ],
+  },
+
+
+  // ============================================================
+  // MoCRA
+  // ============================================================
+
+  {
+    id: 6,
 
     title: "MoCRA",
 
@@ -242,90 +343,53 @@ export const projects = [
       "Product Registry",
       "Workflow Automation",
     ],
-  },  
-
-  {
-    id: 6,
-
-    title: "eLaan",
-
-    subtitle: "Equipment Borrowing & Appointment System",
-
-    year: "2024",
-
-    image: Elaan,
-
-    images: [
-      Elaan
-    ],
-
-    technologies: [
-      "SvelteKit",
-      "Flask",
-      "PostgreSQL",
-      "Tailwind CSS",
-      "Figma",
-    ],
-
-    overview:
-      "A web application developed during my software engineering internship at the UP Department of Family Life and Child Development to streamline equipment borrowing and appointment management.",
-
-    contributions: [
-      "Developed responsive front-end interfaces using SvelteKit and Tailwind CSS",
-      "Designed user interfaces and interactive prototypes in Figma",
-      "Integrated Flask APIs with the front end",
-      "Collaborated with the development team to improve application reliability and performance",
-      "Implemented feature enhancements and bug fixes",
-    ],
-
-    features: [
-      "Equipment Borrowing",
-      "Appointment Scheduling",
-      "Inventory Management",
-      "Admin Dashboard",
-      "Responsive Interface",
-    ],
   },
 
+
+  // ============================================================
+  // MEDICAL OBSERVERSHIP — APPLICANT FORM
+  // ============================================================
+
+  /*
   {
     id: 7,
 
-    title: "LAAN RMS",
+    title: "Medical Observership",
 
-    subtitle: "NSRC Resource Management System",
+    subtitle: "Applicant Form",
 
-    year: "2023",
+    year: "2026",
 
-    image: LaanRMS,
+    image: ObservershipApplicant,
 
     images: [
-      LaanRMS,
+      ObservershipApplicant,
+      ObservershipApplicant1,
     ],
 
     technologies: [
-      "Flask",
-      "PostgreSQL",
-      "REST APIs",
+      "Power Apps",
+      "Power Automate",
+      "SharePoint",
     ],
 
     overview:
-      "A web-based resource management system developed for the University of the Philippines National Service Reserve Corps (NSRC) to manage reservist information, announcements, and volunteer activities.",
+      "A Power Apps application that enables students to complete observership forms, submit required information, and upload supporting documents.",
 
     contributions: [
-      "Developed backend services using Flask",
-      "Designed and implemented RESTful APIs",
-      "Designed and optimized PostgreSQL database structures",
-      "Implemented reliable client-server communication",
-      "Supported backend architecture and feature development",
+      "Developed the Power Apps application",
+      "Built document upload functionality",
+      "Integrated SharePoint Lists",
+      "Implemented Power Automate workflows",
     ],
 
     features: [
-      "Reservist Management",
-      "Volunteer Opportunities",
-      "Announcements",
-      "REST API",
-      "PostgreSQL Database",
+      "Power Apps Forms",
+      "Document Upload",
+      "Automated Email Notifications",
+      "SharePoint Integration",
     ],
-  }
+  },
+  */
 
 ];

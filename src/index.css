@@ -41,3 +41,57 @@ h1 {
 .floating-navbar {
   animation: floatingNavbar 5s ease-in-out infinite;
 }
+
+/* =====================================================
+   PROJECT MODAL SCROLLBAR
+===================================================== */
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 20px 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;
+}
+
+/* =====================================================
+   ABOUT / SKILLS MODAL SCROLLBAR
+===================================================== */
+
+.about-skills-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+.about-skills-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.about-skills-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 18px 0;
+}
+
+.about-skills-scrollbar::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 999px;
+}
+
+.about-skills-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;
+}
