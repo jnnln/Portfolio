@@ -73,6 +73,7 @@ export const projects = [
       "An in-progress website and self-service kiosk designed to provide customers with a seamless shopping experience for skincare products in both web and kiosk environments.",
 
     contributions: [
+      "Designed and developed the kiosk UI/UX, focusing on a simple, intuitive, and user-friendly shopping experience optimized for touchscreen use.",
       "Enhanced the website and kiosk UI/UX",
       "Improved user flows and overall usability",
       "Coordinated project tasks and feature planning",
@@ -129,8 +130,8 @@ export const projects = [
       "Implemented automated email notifications",
       "Developed the physician onboarding process, including account creation, license verification, and onboarding workflows",
       "Integrated SharePoint Lists, Microsoft Forms, and Microsoft Bookings",
-      "Provided ongoing maintenance and production support by troubleshooting issues, implementing bug fixes, and enhancing existing features",
       "Created test cases and performed end-to-end system testing",
+      "Provided ongoing maintenance and production support by troubleshooting issues, implementing bug fixes, and enhancing existing features",
     ],
 
     features: [
