@@ -4,6 +4,7 @@ import About from "./components/About";
 import FeaturedProjects from "./components/FeaturedProjects";
 import CreativeWorks from "./components/CreativeWorks";
 import Contact from "./components/Contact";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <FeaturedProjects />
       <CreativeWorks />
       <Contact />
+      <Analytics />
     </main>
   );
 }
